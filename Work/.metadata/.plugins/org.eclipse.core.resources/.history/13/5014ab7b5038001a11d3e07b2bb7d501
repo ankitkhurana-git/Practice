@@ -1,0 +1,32 @@
+package abc;
+
+import java.nio.charset.StandardCharsets;
+import java.security.NoSuchAlgorithmException;
+
+public class Enc {
+	public static void main(String[] args) {
+
+		try {
+
+			String s1 = "Hello";
+			String hexHello = Sha.toHexString(s1.getBytes(StandardCharsets.UTF_8));
+			System.out.println("Hex Hello: " + hexHello);
+			String encryptedString = Sha.toHexString(Sha.getSHA(s1));
+			System.out.println("Encrypted String for Hello: " + encryptedString+ "\n");
+
+			// Using Normal Hex String
+			System.out.println("Decrypting normal Hex");
+			Utility.usingLibrary(hexHello);
+			Utility.usingOurCustomCode(hexHello);
+
+			// Using Encrypted String
+			System.out.println("\nDecrypting Encrypted Hex");
+			Utility.usingLibrary(encryptedString);
+			Utility.usingOurCustomCode(encryptedString);
+
+		} catch (NoSuchAlgorithmException e) {
+			System.out.println("Exception thrown for incorrect algorithm: " + e);
+		}
+
+	}
+}

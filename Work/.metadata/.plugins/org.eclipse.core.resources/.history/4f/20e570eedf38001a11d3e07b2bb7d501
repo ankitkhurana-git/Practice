@@ -1,0 +1,29 @@
+
+public class LinkedList {
+	Node head;
+
+	static class Node{
+		int data;
+		Node next;
+
+		Node(int data){
+			this.data =  data;
+			next = null;
+		}
+
+		void checkLoop(Node node) {
+
+			Node fast = node;
+			Node slow = node;
+			if (fast == null || fast.next == null) {
+				System.out.println("empty");
+			}
+			fast = node.next.next;
+			slow = node.next;
+
+			while(fast != null || fast.next! = null) {
+
+			}
+		}
+	}
+}
