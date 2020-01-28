@@ -1,20 +1,43 @@
+import org.codehaus.jackson.annotate.JsonProperty;
+import org.codehaus.jackson.annotate.JsonPropertyOrder;
+
+@JsonPropertyOrder({ "Method", "Request-URI", "Via", "From", "To", "Call-ID", "CSeq", "Proxy-Authorization",
+	"Content-Type", "Content-Length", "Date", "Contact", "Expires", "Accept", "Max-Forwards", "User-Agent",
+"Allow" })
 public class SipData {
+	@JsonProperty("Method")
 	private String method;
+	@JsonProperty("Request-URI")
 	private String requestURI;
+	@JsonProperty("Via")
 	private String via;
+	@JsonProperty("From")
 	private String from;
+	@JsonProperty("To")
 	private String to;
+	@JsonProperty("Call-ID")
 	private String callID;
+	@JsonProperty("CSeq")
 	private String cSeq;
+	@JsonProperty("Proxy-Authorization")
 	private String proxyAuthorization;
+	@JsonProperty("Content-Type")
 	private String contentType;
+	@JsonProperty("Content-Length")
 	private String contentLength;
+	@JsonProperty("Date")
 	private String date;
+	@JsonProperty("Contact")
 	private String contact;
+	@JsonProperty("Expires")
 	private String expires;
+	@JsonProperty("Accept")
 	private String accept;
+	@JsonProperty("Max-Forwards")
 	private String maxForwards;
+	@JsonProperty("User-Agent")
 	private String userAgent;
+	@JsonProperty("Allow")
 	private String allow;
 
 	public String getMethod() {
